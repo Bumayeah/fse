@@ -1,14 +1,14 @@
 <?php
 
-function fse_register_front_projects_block() {
-    register_block_type( 'fse/front-projects', array(
+function fse_register_front_work_block() {
+    register_block_type( 'fse/front-work', array(
         'attributes' => array(
-            'title'   => array( 'type' => 'string', 'default' => 'Projects' ),
+            'title'   => array( 'type' => 'string', 'default' => 'Work' ),
             'perPage' => array( 'type' => 'number', 'default' => 3 ),
         ),
         'render_callback' => function( $attributes ) {
             $query = new WP_Query( array(
-                'post_type'      => 'project',
+                'post_type'      => 'work',
                 'posts_per_page' => $attributes['perPage'],
                 'post_status'    => 'publish',
                 'orderby'        => 'date',
@@ -24,7 +24,7 @@ function fse_register_front_projects_block() {
             while ( $query->have_posts() ) {
                 $query->the_post();
 
-                $project_url = get_post_meta( get_the_ID(), '_project_url', true );
+                $work_url = get_post_meta( get_the_ID(), '_work_url', true );
                 $logo        = get_the_post_thumbnail( get_the_ID(), array( 28, 28 ), array(
                     'class'   => 'h-7 w-7 object-contain',
                     'loading' => 'lazy',
@@ -37,15 +37,15 @@ function fse_register_front_projects_block() {
                     )
                     : '';
 
-                $title_html = $project_url
-                    ? sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>', esc_url( $project_url ), esc_html( get_the_title() ) )
+                $title_html = $work_url
+                    ? sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>', esc_url( $work_url ), esc_html( get_the_title() ) )
                     : esc_html( get_the_title() );
 
                 $items .= sprintf(
                     '<li class="flex gap-4">
                         %s
                         <dl class="flex flex-auto flex-wrap gap-x-2">
-                            <dt class="sr-only">Project</dt>
+                            <dt class="sr-only">Work</dt>
                             <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">%s</dd>
                             <dt class="sr-only">Description</dt>
                             <dd class="text-xs text-zinc-500 dark:text-zinc-400">%s</dd>

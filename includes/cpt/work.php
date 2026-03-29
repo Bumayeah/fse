@@ -1,7 +1,7 @@
 <?php
 
-function fse_register_project_cpt() {
-    register_post_type( 'project', array(
+function fse_register_work_cpt() {
+    register_post_type( 'work', array(
         'labels' => array(
             'name'               => 'Work',
             'singular_name'      => 'Work',
@@ -24,14 +24,14 @@ function fse_register_project_cpt() {
         'menu_position' => 5,
     ) );
 
-    register_post_meta( 'project', '_project_url', array(
+    register_post_meta( 'work', '_work_url', array(
         'show_in_rest'  => true,
         'single'        => true,
         'type'          => 'string',
         'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
     ) );
 
-    register_post_meta( 'project', '_project_url_label', array(
+    register_post_meta( 'work', '_work_url_label', array(
         'show_in_rest'  => true,
         'single'        => true,
         'type'          => 'string',

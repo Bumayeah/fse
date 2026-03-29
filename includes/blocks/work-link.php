@@ -1,17 +1,17 @@
 <?php
 
-function fse_register_project_link_block() {
-    register_block_type( 'fse/project-link', array(
+function fse_register_work_link_block() {
+    register_block_type( 'fse/work-link', array(
         'render_callback' => function( $attributes ) {
-            $project_url   = get_post_meta( get_the_ID(), '_project_url', true );
-            $url_label     = get_post_meta( get_the_ID(), '_project_url_label', true );
+            $work_url   = get_post_meta( get_the_ID(), '_work_url', true );
+            $url_label  = get_post_meta( get_the_ID(), '_work_url_label', true );
 
-            if ( ! $project_url ) {
+            if ( ! $work_url ) {
                 return '';
             }
 
             if ( ! $url_label ) {
-                $url_label = wp_parse_url( $project_url, PHP_URL_HOST );
+                $url_label = wp_parse_url( $work_url, PHP_URL_HOST );
             }
 
             return sprintf(
@@ -19,7 +19,7 @@ function fse_register_project_link_block() {
                     <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" aria-hidden="true"></span>
                     <span>%s</span>
                 </a>',
-                esc_url( $project_url ),
+                esc_url( $work_url ),
                 esc_html( $url_label )
             );
         },

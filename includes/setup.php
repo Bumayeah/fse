@@ -29,7 +29,7 @@ function fse_create_primary_menu() {
     $items = [
         [ 'title' => 'About',    'url' => '/about' ],
         [ 'title' => 'Articles', 'url' => '/articles' ],
-        [ 'title' => 'Projects', 'url' => '/projects' ],
+        [ 'title' => 'Work', 'url' => '/work' ],
         [ 'title' => 'Speaking', 'url' => '/speaking' ],
         [ 'title' => 'Uses',     'url' => '/uses' ],
     ];

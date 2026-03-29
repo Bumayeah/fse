@@ -1,10 +1,10 @@
 <?php
 
-function fse_register_projects_block() {
-    register_block_type( 'fse/projects', array(
+function fse_register_work_items_block() {
+    register_block_type( 'fse/work-items', array(
         'render_callback' => function( $attributes ) {
             $query = new WP_Query( array(
-                'post_type'      => 'project',
+                'post_type'      => 'work',
                 'posts_per_page' => -1,
                 'post_status'    => 'publish',
                 'orderby'        => 'menu_order',
@@ -22,8 +22,8 @@ function fse_register_projects_block() {
             while ( $query->have_posts() ) {
                 $query->the_post();
 
-                $project_url       = get_post_meta( get_the_ID(), '_project_url', true );
-                $project_url_label = get_post_meta( get_the_ID(), '_project_url_label', true );
+                $work_url       = get_post_meta( get_the_ID(), '_work_url', true );
+                $work_url_label = get_post_meta( get_the_ID(), '_work_url_label', true );
                 $logo              = get_the_post_thumbnail( get_the_ID(), array( 32, 32 ), array(
                     'class' => 'h-8 w-8',
                     'loading' => 'lazy',
@@ -33,18 +33,18 @@ function fse_register_projects_block() {
                     ? sprintf( '<div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">%s</div>', $logo )
                     : '';
 
-                $link_html = $project_url
+                $link_html = $work_url
                     ? sprintf(
                         '<p class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">%s<span class="ml-2">%s</span></p>',
                         $link_icon,
-                        esc_html( $project_url_label ?: wp_parse_url( $project_url, PHP_URL_HOST ) )
+                        esc_html( $work_url_label ?: wp_parse_url( $work_url, PHP_URL_HOST ) )
                     )
                     : '';
 
-                $title_inner = $project_url
+                $title_inner = $work_url
                     ? sprintf(
                         '<div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div><a href="%s" target="_blank" rel="noopener noreferrer"><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">%s</span></a>',
-                        esc_url( $project_url ),
+                        esc_url( $work_url ),
                         esc_html( get_the_title() )
                     )
                     : sprintf( '<span>%s</span>', esc_html( get_the_title() ) );
