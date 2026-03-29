@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+  "version": 3,
+  "templateParts": [
+    {
+      "area": "header",
+      "name": "header",
+      "title": "Header"
+    },
+    {
+      "area": "footer",
+      "name": "footer",
+      "title": "Footer"
+    }
+  ],
+  "settings": {
+    "color": {
+      "defaultPalette": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "custom": false,
+      "palette": [
+        {
+          "slug": "fse-white",
+          "color": "rgb(255,255,255)",
+          "name": "fse white"
+        },
+        {
+          "slug": "u-gray-100",
+          "color": "rgb(243 244 246)",
+          "name": "fse gray 100"
+        },
+        {
+          "slug": "u-gray-200",
+          "color": "rgb(229 231 235)",
+          "name": "fse gray 200"
+        },
+        {
+          "slug": "u-gray-300",
+          "color": "rgb(209 213 219)",
+          "name": "fse gray 300"
+        },
+        {
+          "slug": "u-gray-400",
+          "color": "rgb(156 163 175)",
+          "name": "fse gray 400"
+        },
+        {
+          "slug": "u-gray-500",
+          "color": "rgb(107 114 128)",
+          "name": "fse gray 500"
+        },
+        {
+          "slug": "u-gray-600",
+          "color": "rgb(75 85 99)",
+          "name": "fse gray 600"
+        },
+        {
+          "slug": "u-gray-700",
+          "color": "rgb(55 65 81)",
+          "name": "fse gray 700"
+        },
+        {
+          "slug": "u-gray-800",
+          "color": "rgb(31 41 55)",
+          "name": "fse gray 800"
+        },
+        {
+          "slug": "u-gray-900",
+          "color": "rgb(17 24 39)",
+          "name": "fse gray 900"
+        },
+        {
+          "slug": "u-primary",
+          "color": "rgb(239 68 68)",
+          "name": "fse primary"
+        },
+        { "slug": "u-accent", "color": "rgb(67 56 202)", "name": "fse accent" },
+        {
+          "slug": "u-success",
+          "color": "rgb(52 211 153)",
+          "name": "fse Ssuccess"
+        },
+        { "slug": "u-info", "color": "rgb(96 165 250)", "name": "fse info" },
+        {
+          "slug": "u-warning",
+          "color": "rgb(251 146 60)",
+          "name": "fse warning"
+        },
+        { "slug": "u-danger", "color": "rgb(236 72 153)", "name": "fse danger" }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false
+    },
+    "typography": {
+      "customFontSize": false
+    }
+  }
+}

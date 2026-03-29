@@ -1,0 +1,24 @@
+{
+  "name": "fse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.output.css --minify && vite build",
+    "build:css": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.output.css --minify",
+    "build:js": "vite build",
+    "watch": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "vite": "^8.0.3"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "gsap": "^3.14.2"
+  }
+}

@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../**/*.php";
+@source "../**/*.html";
+
+@variant dark (&:where(.dark, .dark *));

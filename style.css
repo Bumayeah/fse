@@ -1,0 +1,22 @@
+/*
+Theme Name: FSE
+Theme URI: https://github.com/bumayeah/fse/
+Author: Johnny
+Author URI: https://github.com/bumayeah/
+Description: FSE, setup for a wordpress website
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.9.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fse
+*/
+
+header {
+  background: red;
+}
+
+.wp-block-site-header header {
+  background: red !important; /* Verhoog de specificiteit */
+}

@@ -1,0 +1,49 @@
+<?php
+
+function fse_register_subscribe_block() {
+    register_block_type( 'fse/subscribe', array(
+        'attributes' => array(
+            'title'       => array( 'type' => 'string', 'default' => 'Stay up to date' ),
+            'description' => array( 'type' => 'string', 'default' => 'Get notified when I publish something new, and unsubscribe at any time.' ),
+            'actionUrl'   => array( 'type' => 'string', 'default' => '/thank-you' ),
+            'buttonLabel' => array( 'type' => 'string', 'default' => 'Join' ),
+        ),
+        'render_callback' => function( $attributes ) {
+            return sprintf(
+                '<form
+                    class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+                    action="%s"
+                >
+                    <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6 flex-none">
+                            <path d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"></path>
+                            <path d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6" class="stroke-zinc-400 dark:stroke-zinc-500"></path>
+                        </svg>
+                        <span class="ml-3">%s</span>
+                    </h2>
+                    <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">%s</p>
+                    <div class="mt-6 flex items-center">
+                        <span class="flex min-w-0 flex-auto p-px">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email address"
+                                aria-label="Email address"
+                                required
+                                class="w-full appearance-none rounded-[calc(var(--radius-md)-1px)] bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-teal-500/10 focus:outline-teal-500 sm:text-sm dark:bg-zinc-700/15 dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-teal-400/10 dark:focus:outline-teal-400"
+                            />
+                        </span>
+                        <button
+                            class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none"
+                            type="submit"
+                        >%s</button>
+                    </div>
+                </form>',
+                esc_url( $attributes['actionUrl'] ),
+                esc_html( $attributes['title'] ),
+                esc_html( $attributes['description'] ),
+                esc_html( $attributes['buttonLabel'] )
+            );
+        },
+    ) );
+}
