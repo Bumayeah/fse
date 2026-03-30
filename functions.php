@@ -59,7 +59,7 @@ add_action( 'save_post_experience', 'fse_save_experience_meta' );
 add_action( 'init', 'fse_register_work_cpt' );
 add_action( 'after_setup_theme', 'fse_setup_theme' );
 add_filter( 'language_attributes', function( $output ) {
-    return $output . ' class="h-full antialiased dark"';
+    return $output . ' class="h-full antialiased"';
 } );
 add_filter( 'body_class', function( $classes ) {
     return array_merge( $classes, [ 'h-full', 'bg-zinc-50', 'dark:bg-black' ] );

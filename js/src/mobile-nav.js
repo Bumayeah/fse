@@ -25,22 +25,22 @@ export function initMobileNav() {
     backdropFilter: 'blur(4px)',
   })
 
-  var isDark = document.documentElement.classList.contains('dark')
   Object.assign(panel.style, {
-    position:        'fixed',
-    top:             panelTop + 'px',
-    left:            '16px',
-    right:           '16px',
-    zIndex:          '100001',
-    borderRadius:    '1.5rem',
-    padding:         '2rem',
-    backgroundColor: isDark ? '#18181b' : '#ffffff',
-    boxShadow:       '0 0 0 1px rgba(0,0,0,0.05)',
+    position:     'fixed',
+    top:          panelTop + 'px',
+    left:         '16px',
+    right:        '16px',
+    zIndex:       '100001',
+    borderRadius: '1.5rem',
+    padding:      '2rem',
+    boxShadow:    '0 0 0 1px rgba(0,0,0,0.05)',
   })
 
   var close = document.getElementById('fse-mobile-menu-close')
 
   function openMenu() {
+    var isDark = document.documentElement.classList.contains('dark')
+    panel.style.backgroundColor = isDark ? '#18181b' : '#ffffff'
     backdrop.style.display = 'block'
     panel.style.display    = 'block'
     btn.setAttribute('aria-expanded', 'true')

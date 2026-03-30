@@ -18,6 +18,9 @@ export function initThemeSwitcher() {
     }
   }
 
+  // Sync aria-label with current state (class already set by inline head script)
+  btn.setAttribute('aria-label', isDark() ? 'Switch to light theme' : 'Switch to dark theme')
+
   btn.addEventListener('click', function () {
     setTheme(!isDark())
   })
