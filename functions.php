@@ -8,7 +8,7 @@ include_once( get_theme_file_path( '/includes/front/head.php' ) );
 include_once( get_theme_file_path( '/includes/front/copyright.php' ) );
 
 include_once( get_theme_file_path( '/includes/setup.php' ) );
-include_once( get_theme_file_path( '/includes/blocks/articles.php' ) );
+include_once( get_theme_file_path( '/includes/blocks/projects.php' ) );
 include_once( get_theme_file_path( '/includes/blocks/navigation.php' ) );
 include_once( get_theme_file_path( '/includes/blocks/hero.php' ) );
 include_once( get_theme_file_path( '/includes/blocks/photo-gallery.php' ) );
@@ -34,7 +34,7 @@ include_once( get_theme_file_path( '/includes/cpt/work.php' ) );
 add_action( 'wp_head', 'fse_head', 5 );
 add_action( 'wp_enqueue_scripts', 'fse_enqueue_style' );
 add_action( 'init', 'fse_register_copyright_block' );
-add_action( 'init', 'fse_register_articles_block' );
+add_action( 'init', 'fse_register_projects_block' );
 add_action( 'init', 'fse_register_navigation_block' );
 add_action( 'init', 'fse_register_hero_block' );
 add_action( 'init', 'fse_register_photo_gallery_block' );

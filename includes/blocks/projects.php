@@ -1,7 +1,7 @@
 <?php
 
-function fse_register_articles_block() {
-    register_block_type( 'fse/articles', array(
+function fse_register_projects_block() {
+    register_block_type( 'fse/projects', array(
         'attributes' => array(
             'perPage' => array(
                 'type'    => 'number',
@@ -38,7 +38,7 @@ function fse_register_articles_block() {
                         </time>
                         <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">%s</p>
                         <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-                            Read article<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            Read project<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </div>
                     </article>',
                     esc_url( get_permalink() ),
